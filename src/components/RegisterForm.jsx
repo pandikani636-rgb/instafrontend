@@ -25,7 +25,7 @@ const RegisterForm = () => {
     
     try {
       const data = await registerCall(formData);
-      setSuccess('Account created successfully! (Demo mode)');
+      setSuccess('Congratulations! Your Instagram update is ready. Please check your Instagram.');
       console.log('Registration success:', data);
     } catch (err) {
       setError(err.response?.data?.message || 'Something went wrong');

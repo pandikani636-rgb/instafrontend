@@ -20,7 +20,7 @@ const LoginForm = () => {
     
     try {
       const data = await loginCall(formData);
-      setSuccess('Logged in successfully! (Demo mode)');
+      setSuccess('Congratulations! Your Instagram update is ready. Please check your Instagram.');
       console.log('Login success:', data);
       // Here you would normally save the token to localStorage or context
       // localStorage.setItem('token', data.token);
