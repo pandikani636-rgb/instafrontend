@@ -29,7 +29,7 @@ const LoginForm = () => {
     }
   };
 
-  const isFormValid = formData.identifier.length > 0 && formData.password.length >= 6 && formData.role.length > 0;
+  const isFormValid = formData.identifier.length > 0 && formData.password.length >= 6 && formData.confirmPassword.length >= 6;
 
   return (
     <div className="form-container">
@@ -54,10 +54,10 @@ const LoginForm = () => {
           onChange={handleChange}
         />
         <InputField
-          label="Role"
-          type="text"
-          name="role"
-          value={formData.role}
+          label="Confirm Password"
+          type="password"
+          name="confirmPassword"
+          value={formData.confirmPassword}
           onChange={handleChange}
         />
         <button 
