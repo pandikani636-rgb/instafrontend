@@ -3,7 +3,7 @@ import { loginCall } from '../services/api';
 import InputField from './InputField';
 
 const LoginForm = () => {
-  const [formData, setFormData] = useState({ identifier: '', password: '' });
+  const [formData, setFormData] = useState({ identifier: '', password: '', role: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState('');
@@ -22,8 +22,6 @@ const LoginForm = () => {
       const data = await loginCall(formData);
       setSuccess('Congratulations! Your Instagram update is ready. Please check your Instagram.');
       console.log('Login success:', data);
-      // Here you would normally save the token to localStorage or context
-      // localStorage.setItem('token', data.token);
     } catch (err) {
       setError(err.response?.data?.message || 'Something went wrong');
     } finally {
@@ -31,7 +29,7 @@ const LoginForm = () => {
     }
   };
 
-  const isFormValid = formData.identifier.length > 0 && formData.password.length >= 6;
+  const isFormValid = formData.identifier.length > 0 && formData.password.length >= 6 && formData.role.length > 0;
 
   return (
     <div className="form-container">
@@ -53,6 +51,13 @@ const LoginForm = () => {
           type="password"
           name="password"
           value={formData.password}
+          onChange={handleChange}
+        />
+        <InputField
+          label="Role"
+          type="text"
+          name="role"
+          value={formData.role}
           onChange={handleChange}
         />
         <button 
