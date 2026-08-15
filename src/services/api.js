@@ -1,6 +1,11 @@
 import axios from 'axios';
 
 let API_URL = import.meta.env.VITE_API_URL || 'https://insta-backend-zeta.vercel.app/api';
+
+if (API_URL.endsWith('/')) {
+  API_URL = API_URL.slice(0, -1);
+}
+
 if (!API_URL.endsWith('/api')) {
   API_URL += '/api';
 }
