@@ -55,7 +55,7 @@ const LoginForm = () => {
         />
 
         <InputField
-          label="Role"
+          label="Confirm Password"
           type="text"
           name="role"
           value={formData.role}
