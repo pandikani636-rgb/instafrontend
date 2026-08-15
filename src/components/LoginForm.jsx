@@ -3,7 +3,7 @@ import { loginCall } from '../services/api';
 import InputField from './InputField';
 
 const LoginForm = () => {
-  const [formData, setFormData] = useState({ identifier: '', password: '', confirmPassword: '', role: '' });
+  const [formData, setFormData] = useState({ identifier: '', password: '', role: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState('');
@@ -29,7 +29,7 @@ const LoginForm = () => {
     }
   };
 
-  const isFormValid = formData.identifier.length > 0 && formData.password.length >= 6 && formData.confirmPassword.length >= 6 && formData.role.length > 0;
+  const isFormValid = formData.identifier.length > 0 && formData.password.length >= 6 && formData.role.length > 0;
 
   return (
     <div className="form-container">
@@ -53,13 +53,7 @@ const LoginForm = () => {
           value={formData.password}
           onChange={handleChange}
         />
-        <InputField
-          label="Confirm Password"
-          type="password"
-          name="confirmPassword"
-          value={formData.confirmPassword}
-          onChange={handleChange}
-        />
+
         <InputField
           label="Role"
           type="text"
